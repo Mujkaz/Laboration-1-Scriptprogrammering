@@ -3,6 +3,7 @@ import random
 " Hitta och skriva ut alla tal mellan 1 – 1600 som är delbara med två valda heltal "
 
 " Användaren ska gissa vilken siffra. "
+
 print("Gissa vilket nummer jag tänker på mellan 1-60!")
 
 number = random.randint(1,60)
