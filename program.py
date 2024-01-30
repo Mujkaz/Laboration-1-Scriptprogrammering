@@ -1,6 +1,5 @@
 import modules
 
-
 # Importerar kod från modules.py filen.
 
 # Funktion som visar meny till användaren
@@ -9,11 +8,12 @@ def menu_choice():
     print("[2]  Uppgift 2: Guessing Game!")
     print("[3]  Uppgift 3: End Program.")
 
-
 # Användarens alternativ är mellan 1-3.
 def menu_operator(choice):
     if choice == 1:
-        modules.check_divisible()
+        divide_one = int(input("Ange det första numret!"))
+        divide_two = int(input("Ange det andra numret!"))
+        modules.check_divisible(divide_one, divide_two)
     elif choice == 2:
         modules.guess_game()
     elif choice == 3:
@@ -31,8 +31,6 @@ def main():
             menu_operator(choice)
         except ValueError:
             print("Ogiltig inmatning.")
-
-
 # Kontrollerar om python-filen körs direkt eller om den importeras som en modul i ett annat program.
 if __name__ == "__main__":
     main()

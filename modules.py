@@ -1,24 +1,26 @@
 import random
 
-def check_divisible():
-    """ Hitta och skriva ut alla tal mellan 1 – 1600 som är delbara med två valda heltal """
+def check_divisible(divide_one, divide_two):
+    """ Hitta och skriva ut alla tal mellan 1 – 1600 som är delbara med två valda positiva tal """
     # Användaren ska ange två nummer som den vill kolla delbarhet på.
     try:
-        divide_one = int(input("Ange det första numret!"))
-        divide_two = int(input("Ange det andra numret!"))
-        # If-sats där programmet kollar om det är ett heltal (felsökning).
+        # If-sats där programmet kollar om det är ett positivt tal (felsökning).
         if divide_one <= 0 or divide_two <= 0:
-            print("Var vänlig och ange ett heltal. ")
+            print("Var vänlig och ange ett positivt tal. ")
             return
+
         # Letar efter siffran användaren har skrivit -
         # - kör igenom for-loopen för att ta reda på vad den är delbar med.
-        print(f"Heltal mellan 1 och 1600 som är delbara med både {divide_one} och {divide_two}")
+        print(f"positivt tal mellan 1 och 1600 som är delbara med både {divide_one} och {divide_two}")
+        output = []
         for i in range(1, 1601):
             if i % divide_one == 0 and i % divide_two == 0:
-                print(i)
+                output.append(i)
+        print(output)
+        return output
     # Felhantering.
     except ValueError:
-        print("Felaktig inmatning. Ange heltal.")
+        print("Felaktig inmatning. Ange positivt tal.")
 
 
 def guess_game():
